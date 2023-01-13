@@ -1,0 +1,25 @@
+.global {
+    margin-bottom: 3vh;
+}
+
+.title {
+    margin-top: 2vh;
+    margin-bottom: 2.5vh;
+}
+
+.navigation {
+    display: table-row;
+}
+
+.link {
+    display: block;
+    text-decoration-line: underline;
+    font-size: 21px;
+    margin-left: 1vw;
+}
+
+@media only screen and (min-width: 768px) {
+    .link {
+        display: inline-block;
+    }
+}
