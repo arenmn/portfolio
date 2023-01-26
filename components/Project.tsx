@@ -6,6 +6,8 @@ declare interface ProjectProps {
     image?: string;
 }
 
+import styles from '../styles/Project.module.css';
+
 const Project = (props: ProjectProps) => {
 
     return (
@@ -13,8 +15,8 @@ const Project = (props: ProjectProps) => {
             <div style={{marginBottom: "2vw"}}>
                 <h2>{props.project}</h2>
                 <br/>
-                {props.image && <Image src={props.image} width={480} height={220} alt={props.project}/>}
-                <div>{props.children}</div>
+                {props.image && <div className={styles.imageContainer}><Image src={props.image} fill alt={props.project}/></div>}
+                {props.children}
             </div>
         </>
     )
