@@ -1,18 +1,9 @@
 import Head from "next/head";
 import Top from "../components/Top";
-import hljs from 'highlight.js';
-import cs from 'highlight.js/lib/languages/csharp'
-import {useEffect} from "react";
 import Link from "next/link";
 import Project from "../components/Project";
-hljs.registerLanguage('cs', cs)
 
 export default function Index() {
-
-    useEffect(() => {
-        hljs.configure({ classPrefix: ''});
-        hljs.initHighlighting()
-    }, [])
 
     return (
         <>
@@ -26,24 +17,14 @@ export default function Index() {
                     <p>The tool outputs logically deducible steps and tries to get as far as possible in solving the puzzle.</p>
                     <br/>
                     <p>The solver has various different rules it can use, and it tries to apply the rules from least computationally intensive to most.</p>
-                    <p>A simple rule would look something like this:</p>
+                    <p>A simple rule could be looking for cells on the Sudoku grid where only one number is necessary to complete it, and fill it in.</p>
                     <br/>
-                    <pre><code className="cs">
-                    {`
-public bool ApplyRule(Cell cell, Solver solver) 
-{
-    if (cell.Possibilities.Count == 1)
-    {
-        solver.PlaceDigit(cell, cell.Possibilities[0]);
-        return true;
-    }
-    return false;
-}
-                    `}
-                    </code></pre>
+                    <p>An example of the start of a solve can be seen here: <Link className="link" href="/solve.png">here</Link>, in this case rules were based on <Link className="link" href="https://www.sudokuwiki.org/sudoku.htm">Andrew Stuart&apos;s findings</Link>.</p>
                     <br/>
-                    <p>An example of a simple solve can be seen <Link className="link" href="/solve.png">here</Link>, in this case rules from <Link className="link" href="https://www.sudokuwiki.org/sudoku.htm">Andrew Stuart&apos;s solver</Link> have been recreated.</p>
-                    <br/>
+                </Project>
+                <Project project="Portfolio website">
+                    <p>This website was statically generated using Next.js and it uses React for frontend components.</p>
+                    <p>It&apos;s open source, and can be found <Link className="link" href="https://github.com/arenmn/portfolio">here</Link>.</p>
                 </Project>
             </main>
         </>
