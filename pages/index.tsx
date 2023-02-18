@@ -15,7 +15,7 @@ export default function Index() {
                 <br/>
                 <p>I&apos;m a fast learner, and already familiar with JavaScript/TypeScript, C#, Java and Python.</p>
                 <br/>
-                <p>You can reach me at <a className="link" href="mailto:contact@arenm.me">contact@arenm.me</a>.</p>
+                <p>You can reach me <a className="link" href="mailto:aren.merzoian@gmail.com">here</a>.</p>
             </main>
         </>
     )
